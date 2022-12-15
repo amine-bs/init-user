@@ -28,6 +28,6 @@ payload ={
         "site_name": "onyxia"
     }
 }
-
-r = requests.post('http://localhost:3000/api/setup', data=payload )
+headers = {'content-type' : 'application/json'}
+r = requests.post("http://localhost:3000/api/setup", headers=headers, json=payload )
 print(r)
