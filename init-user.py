@@ -1,5 +1,6 @@
 import requests
 from requests.exceptions import ConnectionError
+import time
 
 while True:
     try:
@@ -8,6 +9,8 @@ while True:
             break
     except ConnectionError as e:
         print(e)
+        time.sleep(5)
+        
 payload ={ 
     "database": None,
     "prefs": {
