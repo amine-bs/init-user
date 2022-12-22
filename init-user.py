@@ -2,7 +2,7 @@ import requests
 from requests.exceptions import ConnectionError
 import time
 import os
-
+print("in python")
 password = os.environ["MB_PASSWORD"]
 email = os.environ["MB_EMAIL"]
 token = os.environ["MB_SETUP_TOKEN"]
