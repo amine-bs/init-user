@@ -31,5 +31,5 @@ while True:
             print("Setup done!")
             break
     except ConnectionError as e:
-        time.sleep(10)
+        time.sleep(15)
         
