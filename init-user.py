@@ -35,5 +35,5 @@ while True:
             print(r)
             break
     except ConnectionError as e:
-        time.sleep(15)
+        time.sleep(2)
         
