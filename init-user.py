@@ -1,6 +1,11 @@
 import requests
 from requests.exceptions import ConnectionError
 import time
+import os
+
+password = os.environ["MB_PASSWORD"]
+email = os.environ["MB_EMAIL"]
+token = os.environ["MB_SETUP_TOKEN"]
 payload ={ 
     "database": None,
     "prefs": {
@@ -8,13 +13,13 @@ payload ={
         "site_locale": "en",
         "site_name": "onyxia"
     },
-    "token": "metabase",
+    "token": token,
     "user": {
-        "email": "toto@toto.toto",
+        "email": email,
         "first_name": None,
         "last_name": None,
-        "password": "totototo1",
-        "password_confirm": "totototo1",
+        "password": password,
+        "password_confirm": password,
         "site_name": "onyxia"
     }
 }
@@ -23,7 +28,7 @@ while True:
     try:
         r = requests.post("http://localhost:3000/api/setup", headers=headers, json=payload )
         if r.status_code == 200:
-            print("setup done!")
+            print("Setup done!")
             break
     except ConnectionError as e:
         time.sleep(10)
