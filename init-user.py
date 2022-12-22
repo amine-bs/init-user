@@ -30,6 +30,10 @@ while True:
         if r.status_code == 200:
             print("Setup done!")
             break
+        else:
+            print("setup error")
+            print(r)
+            break
     except ConnectionError as e:
         time.sleep(15)
         
